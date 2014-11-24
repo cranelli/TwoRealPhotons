@@ -1,5 +1,5 @@
-#include "Analysis/NtupleBuilder/interface/NtupleBuilder.h"
-#include "Analysis/NtupleBuilder/interface/GenParticleParentage.h"
+#include "TwoRealPhotons/NtupleBuilder/interface/NtupleBuilder.h"
+#include "TwoRealPhotons/NtupleBuilder/interface/GenParticleParentage.h"
 
 #include "SimDataFormats/GeneratorProducts/interface/LHERunInfoProduct.h"
 #include "SimDataFormats/GeneratorProducts/interface/LHEEventProduct.h"

@@ -1,4 +1,4 @@
-#include "Analysis/NtupleBuilder/interface/GenParticleParentage.h"
+#include "TwoRealPhotons/NtupleBuilder/interface/GenParticleParentage.h"
 
 #include <iostream>
 
