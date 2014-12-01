@@ -20,7 +20,7 @@ import histogramBuilder
 #
 
 workDirLoc = '/home/cranelli/WGamGam/Anomolous_QGC/CMSSW_5_3_12/src/Anomolous_QGC/Analysis/python/'
-inRootFileDir = '../'
+inRootFileDir = '../NtupleRootFiles/'
 inRootFileName = 'GeneratorsTree_Zg.root'
 treeLoc = "demo/gens_tree"
 outRootFileName = 'lheTruePhoton_Zg.root'

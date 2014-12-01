@@ -29,6 +29,9 @@ class particleData(TLorentzVector):
 
     def McParentage(self):
         return self.mcParentage
+
+    def Vertex(self):
+        return self.vertex
                 
     def SetMomPID(self, iMomPID):
         self.sMomPID = iMomPID

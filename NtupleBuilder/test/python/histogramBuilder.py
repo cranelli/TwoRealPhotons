@@ -5,6 +5,7 @@
 # Tested in Python 2.6.4
 
 from ROOT import TLorentzVector
+from ROOT import TVector3
 from ROOT import TH1F, TH2F
 
 Histograms = {}
@@ -41,6 +42,22 @@ def fillDeltaRHistograms(particles1, particles2, key, bins=200, xmin=0, xmax=10)
         for particle2 in particles2:
             if particle1 != particle2: # Don't Histogram comparison with itself
                 Histograms[key].Fill(particle1.DeltaR(particle2))
+
+def fillVertexSeparationHistograms(particles1, particles2, key, bins=200, xmin=0, xmax=0.001):
+     if not key in Histograms:
+        Histograms[key] = TH1F(key, key, bins, xmin, xmax)
+     
+     displacement=  TVector3()
+     for particle1 in particles1:
+        for particle2 in particles2:
+            if particle1 != particle2: # Don't Histogram comparison with itself                                                                            
+                displacement = particles1.Vertex() - particles2.Vertex() 
+                Histograms[key].Fill(displacement.Mag())
+
+def fillParentHistograms(particles, key, bins=50, xmin=-25, xmax=25):
+    if not key in Histograms:
+        Histograms[key] = TH1F(key,key, bins, xmin, xmax)
+    for particle in particles: Histograms[key].Fill(particle.MomPID())
         
 def fillStatusHistograms(particles, key, bins=8, xmin=0, xmax=4):
     if not key in Histograms:
